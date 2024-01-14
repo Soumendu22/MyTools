@@ -1,0 +1,76 @@
+{% extends 'layout.html' %} {% block title %} Word Counter {% endblock title %}
+{% block body %}
+<div class="mt-1 text-center">
+  <h1
+    style="
+      width: auto;
+      margin: auto;
+      color: white;
+      padding: 11px;
+      font-size: 44px;
+    "
+  >
+    Words Counter
+  </h1>
+</div>
+
+{% if mess%}
+<p class="text-center" style="color: red; font-size: 20px">{{ mess }}</p>
+{% endif %}
+
+<div class="row text-center" style="padding: 20px; margin: 20px">
+  <div
+    class="col"
+    style="
+      border-radius: 20px;
+      padding: 0px;
+      margin: 0px 10px 10px 10px;
+      height: 400px;
+    "
+  >
+    <form action="/word" method="POST" enctype="multipart/form-data">
+      <h2 style="border-radius: 20px 20px 0px 0px; padding: 10px">
+        Count Words and Characters
+      </h2>
+      <label style="font-size: 20px"><b>Enter Text</b></label>
+      <br />
+      <textarea
+        type="text"
+        id="text"
+        name="text"
+        value="{{text}}"
+        style="
+          font-size: 20px;
+          width: 650px;
+          margin-top: 10px;
+          height: 125px;
+          margin-bottom: 10px;
+        "
+        required
+      ></textarea>
+      <br />
+      <button
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          border-radius: 10px;
+          width: 490px;
+          padding: 10px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        "
+        type="submit"
+        class="btn btn-dark"
+      >
+        COUNT
+      </button>
+      {% if words%}
+      <p class="text-center" style="color: black; font-size: 21px">
+        Words - {{ words }} & Characters - {{ chars }} (Character count is with
+        spaces)
+      </p>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% endblock body%}

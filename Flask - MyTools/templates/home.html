@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} {% block title %} Home{% endblock title %} {% block
+body %}
+<h1><center>WELCOME TO "MyTools"</center></h1>
+<br />
+<h2 style="margin-top: 100px"><center>Tools</center></h2>
+<div class="container" style="margin-top: 50px">
+  <div
+    class="tools"
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+    "
+  >
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">To Do List</h5>
+        <p class="card-text">
+          With supporting text below as a natural lead-in to additional content.
+        </p>
+        <a href="/todo" class="btn btn-dark">&#8594;</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Password Generator</h5>
+        <p class="card-text">
+          With supporting text below as a natural lead-in to additional content.
+        </p>
+        <a href="/password" class="btn btn-dark">&#8594;</a>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">Word Counter</h5>
+        <p class="card-text">
+          With supporting text below as a natural lead-in to additional content.
+        </p>
+        <a href="/count" class="btn btn-dark">&#8594;</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}
